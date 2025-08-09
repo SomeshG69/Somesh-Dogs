@@ -912,6 +912,212 @@
       outline: 2px solid var(--primary-color);
       outline-offset: 2px;
     }
+/* Enhanced Pricing Section */
+.pricing-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing-section h2 {
+            font-size: 36px;
+            color: #ff4d4d;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, #ff4d4d, #ff1a1a);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 77, 77, 0.3);
+            border-color: #ff4d4d;
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: #ff4d4d;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .price-main {
+            font-size: 48px;
+            font-weight: 800;
+            color: #ff4d4d;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .pricing-options {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .duration {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .price-small {
+            font-weight: 600;
+            color: #ff4d4d;
+            font-size: 16px;
+        }
+
+        .value-highlight {
+            background: rgba(255, 77, 77, 0.1);
+            border: 1px solid rgba(255, 77, 77, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #ff6666;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            background: linear-gradient(45deg, #ff4d4d, #ff1a1a);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 77, 77, 0.5);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        .featured {
+            border: 2px solid #ff4d4d;
+            background: linear-gradient(145deg, rgba(255, 77, 77, 0.08), rgba(255, 255, 255, 0.1));
+        }
+
+        /* Success message styling */
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            display: none;
+            z-index: 1000;
+            animation: slideInRight 0.3s ease;
+            max-width: 300px;
+        }
+
+        /* Pulse animation for contact form highlight */
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.4);
+            }
+            50% { 
+                transform: scale(1.02);
+                box-shadow: 0 0 20px 10px rgba(255, 77, 77, 0.2);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-table {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .pricing-card {
+                padding: 30px 20px;
+            }
+
+            .price-main {
+                font-size: 40px;
+            }
+        }
   </style>
 </head>
 
@@ -967,43 +1173,136 @@
     </section>
 
     <section class="services" id="services">
-      <h3>Our Tail-Wagging Services</h3>
-      <div class="service-grid">
-        <div class="service-item">
-          <i class="fas fa-dog-walking"></i>
-          <h4>Dog Walking</h4>
-          <p>Energetic walks tailored to your dog's needs, keeping them happy and healthy. Includes GPS tracking and photo updates!</p>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-home"></i>
-          <h4>Dog Sitting</h4>
-          <p>Reliable and loving care for your pet in the comfort of your home or ours. Overnight stays available.</p>
-        </div>
-        <div class="service-item">
-          <i class="fas fa-cut"></i>
-          <h4>Grooming</h4>
-          <p>Professional grooming services including baths, brushing, nail trims, and stylish cuts. Mobile grooming options too!</p>
-        </div>
-      </div>
-    </section>
+  <h3>Our Tail-Wagging Services</h3>
+  <div class="service-grid">
+    <div class="service-item">
+      <i class="fas fa-dog-walking"></i>
+      <h4>Dog Walking</h4>
+      <p>Energetic walks tailored to your dog's needs, keeping them happy and healthy. Includes GPS tracking and photo updates!</p>
+    </div>
+    <div class="service-item">
+      <i class="fas fa-home"></i>
+      <h4>Dog Sitting</h4>
+      <p>Reliable and loving care for your pet in the comfort of your home or ours. Overnight stays available.</p>
+    </div>
+    <div class="service-item">
+      <i class="fas fa-cut"></i>
+      <h4>Grooming</h4>
+      <p>Professional grooming services including baths, brushing, nail trims, and stylish cuts. Mobile grooming options too!</p>
+    </div>
+  </div>
+</section>
 
-    <section class="reviews" id="reviews">
-      <h3>What Dog Owners Say</h3>
-      <div class="reviews-grid">
-        <div class="review">
-          <p>"Rachael took care of Max like her own pup. The updates and photos she sent gave me such peace of mind!"</p>
-          <div class="author">– Sarah M.</div>
+<!-- Pricing Section added here -->
+<section class="pricing" id="pricing">
+  <div class="pricing-section">
+        <h2>🏷️ Simple, Transparent Pricing</h2>
+        
+        <div class="pricing-table">
+            <!-- Dog Walking Pricing -->
+            <div class="pricing-card">
+                <i class="fas fa-walking service-icon"></i>
+                <h3>Dog Walking</h3>
+                <div class="price-main">€15</div>
+                <div class="price-period">30 minutes</div>
+                
+                <div class="pricing-options">
+                    <div class="pricing-row">
+                        <span class="duration">30 minutes</span>
+                        <span class="price-small">€15</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="duration">60 minutes</span>
+                        <span class="price-small">€25</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="duration">Weekly package (5 walks)</span>
+                        <span class="price-small">€65 <span class="popular-tag">Save €10</span></span>
+                    </div>
+                </div>
+                
+                <button class="cta-button">Book Now</button>
+            </div>
+
+            <!-- Dog Sitting Pricing -->
+            <div class="pricing-card featured">
+                <i class="fas fa-home service-icon"></i>
+                <h3>Dog Sitting</h3>
+                <div class="price-main">€40</div>
+                <div class="price-period">per day</div>
+                
+                <div class="pricing-options">
+                    <div class="pricing-row">
+                        <span class="duration">Day visit (4 hours)</span>
+                        <span class="price-small">€25</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="duration">Overnight (24 hours)</span>
+                        <span class="price-small">€40</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="duration">Weekend package</span>
+                        <span class="price-small">€110 <span class="popular-tag">Most Popular</span></span>
+                    </div>
+                </div>
+
+                <div class="value-highlight">
+                    ⭐ Includes feeding, walks, playtime & updates
+                </div>
+                
+                <button class="cta-button">Reserve Now</button>
+            </div>
+
+            <!-- Grooming Pricing -->
+            <div class="pricing-card">
+                <i class="fas fa-scissors service-icon"></i>
+                <h3>Grooming</h3>
+                <div class="price-main">€50</div>
+                <div class="price-period">full service</div>
+                
+                <div class="pricing-options">
+                    <div class="pricing-row">
+                        <span class="duration">Basic wash & dry</span>
+                        <span class="price-small">€30</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="duration">Full grooming service</span>
+                        <span class="price-small">€50</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="duration">Premium + nail care</span>
+                        <span class="price-small">€65</span>
+                    </div>
+                </div>
+
+                <div class="value-highlight">
+                    ✂️ Mobile service available (+€10)
+                </div>
+                
+                <button class="cta-button">Schedule</button>
+            </div>
         </div>
-        <div class="review">
-          <p>"Reliable, loving, and affordable services. Bella absolutely loves her daily walks with Rachael!"</p>
-          <div class="author">– James K.</div>
-        </div>
-        <div class="review">
-          <p>"RuffBot even helped me book last minute when I had an emergency. Amazing customer service!"</p>
-          <div class="author">– Priya S.</div>
-        </div>
-      </div>
-    </section>
+    </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <h3>What Dog Owners Say</h3>
+  <div class="reviews-grid">
+    <div class="review">
+      <p>"Rachael took care of Max like her own pup. The updates and photos she sent gave me such peace of mind!"</p>
+      <div class="author">– Sarah M.</div>
+    </div>
+    <div class="review">
+      <p>"Reliable, loving, and affordable services. Bella absolutely loves her daily walks with Rachael!"</p>
+      <div class="author">– James K.</div>
+    </div>
+    <div class="review">
+      <p>"RuffBot even helped me book last minute when I had an emergency. Amazing customer service!"</p>
+      <div class="author">– Priya S.</div>
+    </div>
+  </div>
+</section>
+
 
     <section class="gallery-section" id="gallery">
       <h3>Happy Paws, Happy Moments</h3>
@@ -1106,430 +1405,637 @@
   </footer>
 
   <script>
-    // Global variables
-    let chatHistory = [];
-    let bookingHistory = [];
+// Global variables
+let chatHistory = [];
+let bookingHistory = [];
 
-    // RuffBot responses
-    const botResponses = [
-      "I'd be happy to help you book a service! 🐕 What type of service are you looking for?",
-      "Rachael offers dog walking, sitting, and grooming services. Which one interests you?",
-      "Great choice! You can click the 'Book a Service' button to schedule an appointment. 📅",
-      "Our services are available 7 days a week! What questions do you have?",
-      "Rachael is passionate about providing the best care for your furry friend! 🐾",
-      "We offer flexible scheduling to fit your needs. Would you like to book now?",
-      "All our services include updates and photos so you can see how your dog is doing! 📸",
-      "Safety and happiness are our top priorities for every dog we care for! ❤️"
-    ];
+// RuffBot responses
+const botResponses = [
+  "I'd be happy to help you book a service! 🐕 What type of service are you looking for?",
+  "Rachael offers dog walking, sitting, and grooming services. Which one interests you?",
+  "Great choice! You can click the 'Book a Service' button to schedule an appointment. 📅",
+  "Our services are available 7 days a week! What questions do you have?",
+  "Rachael is passionate about providing the best care for your furry friend! 🐾",
+  "We offer flexible scheduling to fit your needs. Would you like to book now?",
+  "All our services include updates and photos so you can see how your dog is doing! 📸",
+  "Safety and happiness are our top priorities for every dog we care for! ❤️"
+];
 
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', function() {
-      initializeApp();
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  initializeApp();
+});
+
+function initializeApp() {
+  loadChatHistory();
+  loadBookingHistory();
+  setupVideoHandlers();
+  setupScrollHandler();
+  setupEventListeners(); // This is the central function for all listeners
+
+  // Set minimum date for booking to today
+  const dateInput = document.getElementById('dateTime');
+  if (dateInput) {
+    const now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    dateInput.min = now.toISOString().slice(0, 16);
+  }
+}
+
+// Centralize all event listeners with null checks
+function setupEventListeners() {
+  const mobileMenu = document.querySelector('.mobile-menu');
+  if (mobileMenu) {
+    mobileMenu.addEventListener('click', toggleMobileMenu);
+  }
+
+  const bookServiceBtn = document.getElementById('bookServiceBtn');
+  if (bookServiceBtn) {
+    bookServiceBtn.addEventListener('click', toggleModal);
+  }
+
+  const chatRuffBotBtn = document.getElementById('chatRuffBotBtn');
+  if (chatRuffBotBtn) {
+    chatRuffBotBtn.addEventListener('click', toggleChat);
+  }
+
+  const contactBookBtn = document.getElementById('contactBookBtn');
+  if (contactBookBtn) {
+    contactBookBtn.addEventListener('click', toggleModal);
+  }
+
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', toggleModal);
+  }
+
+  const closeChatBtn = document.getElementById('closeChatBtn');
+  if (closeChatBtn) {
+    closeChatBtn.addEventListener('click', toggleChat);
+  }
+
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', submitBooking);
+  }
+
+  const chatInput = document.getElementById('chatInput');
+  if (chatInput) {
+    chatInput.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        sendChat();
+      }
     });
+  }
 
-    function initializeApp() {
-      loadChatHistory();
-      loadBookingHistory();
-      setupVideoHandlers();
-      setupScrollHandler();
-      setupEventListeners(); // New function to centralize event listeners
+  const ownerName = document.getElementById('ownerName');
+  if (ownerName) {
+    ownerName.addEventListener('input', () => validateField('ownerName', 'ownerNameError', 'Please enter your name'));
+  }
 
-      // Set minimum date for booking to today
-      const dateInput = document.getElementById('dateTime');
-      const now = new Date();
-      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-      dateInput.min = now.toISOString().slice(0, 16);
+  const dogName = document.getElementById('dogName');
+  if (dogName) {
+    dogName.addEventListener('input', () => validateField('dogName', 'dogNameError', 'Please enter your dog\'s name'));
+  }
+
+  const serviceType = document.getElementById('serviceType');
+  if (serviceType) {
+    serviceType.addEventListener('change', () => validateField('serviceType', 'serviceTypeError', 'Please select a service'));
+  }
+
+  const dateTime = document.getElementById('dateTime');
+  if (dateTime) {
+    dateTime.addEventListener('input', () => validateField('dateTime', 'dateTimeError', 'Please select a date and time'));
+  }
+
+  // --- CONSOLIDATED PRICING BUTTONS LOGIC ---
+  const pricingCards = document.querySelectorAll('.pricing-card');
+  pricingCards.forEach(card => {
+    const button = card.querySelector('.cta-button');
+    const serviceTitle = card.querySelector('h3');
+
+    if (button && serviceTitle) {
+      const serviceName = serviceTitle.textContent.trim().toLowerCase();
+      if (serviceName.includes('walking')) {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          handleBookNow('walking');
+        });
+      } else if (serviceName.includes('sitting')) {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          handleReserveNow('sitting');
+        });
+      } else if (serviceName.includes('grooming')) {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          handleSchedule('grooming');
+        });
+      }
     }
+  });
+  // --- END OF CONSOLIDATED LOGIC ---
+}
 
-    // Centralize all event listeners
-    function setupEventListeners() {
-      document.querySelector('.mobile-menu').addEventListener('click', toggleMobileMenu);
-      document.getElementById('bookServiceBtn').addEventListener('click', toggleModal);
-      document.getElementById('chatRuffBotBtn').addEventListener('click', toggleChat);
-      document.getElementById('contactBookBtn').addEventListener('click', toggleModal); // Button in contact section
-      document.getElementById('closeModalBtn').addEventListener('click', toggleModal);
-      document.getElementById('closeChatBtn').addEventListener('click', toggleChat);
-      document.getElementById('bookingForm').addEventListener('submit', submitBooking);
-      document.getElementById('chatInput').addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-          sendChat();
-        }
-      });
+// Video handling with fallback
+function setupVideoHandlers() {
+  const video = document.getElementById('heroVideo');
+  const loading = document.getElementById('videoLoading');
 
-      // Add input event listeners for real-time validation feedback
-      document.getElementById('ownerName').addEventListener('input', () => validateField('ownerName', 'ownerNameError', 'Please enter your name'));
-      document.getElementById('dogName').addEventListener('input', () => validateField('dogName', 'dogNameError', 'Please enter your dog\'s name'));
-      document.getElementById('serviceType').addEventListener('change', () => validateField('serviceType', 'serviceTypeError', 'Please select a service'));
-      document.getElementById('dateTime').addEventListener('input', () => validateField('dateTime', 'dateTimeError', 'Please select a date and time'));
-    }
+  if (!video) return;
 
-    // Video handling with fallback
-    function setupVideoHandlers() {
-      const video = document.getElementById('heroVideo');
-      const loading = document.getElementById('videoLoading');
+  video.addEventListener('loadstart', () => {
+    if (loading) loading.style.display = 'block';
+  });
 
-      video.addEventListener('loadstart', () => {
-        loading.style.display = 'block';
-      });
+  video.addEventListener('canplay', () => {
+    if (loading) loading.style.display = 'none';
+  });
 
-      video.addEventListener('canplay', () => {
+  // Fallback for video load error
+  video.addEventListener('error', () => {
+    console.error('Video failed to load. Using fallback background.');
+    if (loading) {
+      loading.innerHTML = '<p>Unable to load background video. Using fallback background.</p>';
+      setTimeout(() => {
         loading.style.display = 'none';
-      });
-
-      // Fallback for video load error
-      video.addEventListener('error', () => {
-        console.error('Video failed to load. Using fallback background.');
-        loading.innerHTML = '<p>Unable to load background video. Using fallback background.</p>';
-        // Hide loading message after a delay if video fails
-        setTimeout(() => {
-          loading.style.display = 'none';
-        }, 3000);
-      });
-    }
-
-    // Header scroll effect
-    function setupScrollHandler() {
-      window.addEventListener('scroll', () => {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
-    }
-
-    // Mobile menu toggle
-    function toggleMobileMenu() {
-        const nav = document.getElementById('nav');
-        nav.classList.toggle('active');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        if (nav.classList.contains('active')) {
-            mobileMenu.setAttribute('aria-expanded', 'true');
-        } else {
-            mobileMenu.setAttribute('aria-expanded', 'false');
-        }
-    }
-
-
-    // Handle Escape key for modals/chatbots
-    function handleEscapeKey(event) {
-      if (event.key === 'Escape') {
-        if (document.getElementById('modalOverlay').classList.contains('active')) {
-          toggleModal();
-        } else if (document.getElementById('chatBot').classList.contains('active')) {
-          toggleChat();
-        }
-      }
-    }
-
-    // Modal functions with accessibility
-    function toggleModal() {
-      const overlay = document.getElementById('modalOverlay');
-      const isActive = overlay.classList.contains('active');
-
-      if (isActive) {
-        overlay.classList.remove('active');
-        overlay.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = ''; // Restore scroll
-        document.removeEventListener('keydown', handleEscapeKey); // Remove escape key listener
-      } else {
-        overlay.classList.add('active');
-        overlay.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden'; // Prevent scroll
-        document.addEventListener('keydown', handleEscapeKey); // Add escape key listener
-
-        // Focus first input
-        setTimeout(() => {
-          document.getElementById('ownerName').focus();
-        }, 300);
-      }
-    }
-
-    // Individual field validation
-    function validateField(fieldId, errorId, message) {
-        const element = document.getElementById(fieldId);
-        const errorElement = document.getElementById(errorId);
-        let isValid = true;
-
-        if (!element.value.trim()) {
-            errorElement.textContent = message;
-            errorElement.style.display = 'block';
-            element.style.borderColor = 'var(--error-color)';
-            isValid = false;
-        } else {
-            errorElement.style.display = 'none';
-            element.style.borderColor = 'var(--border-color-medium)';
-        }
-
-        // Specific date validation
-        if (fieldId === 'dateTime' && element.value.trim()) {
-            const selectedDate = new Date(element.value);
-            const now = new Date();
-            // Allow selecting today if time is in the future
-            if (selectedDate <= now) {
-                errorElement.textContent = 'Please select a future date and time.';
-                errorElement.style.display = 'block';
-                element.style.borderColor = 'var(--error-color)';
-                isValid = false;
-            } else {
-                errorElement.style.display = 'none';
-                element.style.borderColor = 'var(--border-color-medium)';
-            }
-        }
-        return isValid;
-    }
-
-    // Form validation
-    function validateForm() {
-      let isValid = true;
-      isValid = validateField('ownerName', 'ownerNameError', 'Please enter your name') && isValid;
-      isValid = validateField('dogName', 'dogNameError', 'Please enter your dog\'s name') && isValid;
-      isValid = validateField('serviceType', 'serviceTypeError', 'Please select a service') && isValid;
-      isValid = validateField('dateTime', 'dateTimeError', 'Please select a date and time') && isValid;
-
-      return isValid;
-    }
-
-    // Enhanced booking submission
-    function submitBooking(event) {
-      event.preventDefault(); // Prevent default form submission
-
-      if (!validateForm()) {
-        return; // Stop if validation fails
-      }
-
-      const submitBtn = document.getElementById('submitBtn');
-      const originalText = submitBtn.innerHTML;
-
-      // Show loading state
-      submitBtn.innerHTML = '<div class="loading"></div> Processing...';
-      submitBtn.disabled = true;
-
-      const booking = {
-        id: Date.now(),
-        owner: document.getElementById("ownerName").value.trim(),
-        dog: document.getElementById("dogName").value.trim(),
-        service: document.getElementById("serviceType").value,
-        dateTime: document.getElementById("dateTime").value,
-        notes: document.getElementById("notes").value.trim(),
-        timestamp: new Date().toISOString()
-      };
-
-      // Simulate API call
-      setTimeout(() => {
-        try {
-          // Save to storage with error handling
-          saveBooking(booking);
-
-          // Show success animation
-          showSuccessAnimation();
-
-          // Reset form
-          document.getElementById('bookingForm').reset();
-           // Hide error messages and reset border colors
-          ['ownerName', 'dogName', 'serviceType', 'dateTime'].forEach(id => {
-              document.getElementById(id).style.borderColor = 'var(--border-color-medium)';
-              document.getElementById(id + 'Error').style.display = 'none';
-          });
-
-          // Close modal
-          toggleModal();
-
-          // Add confirmation to chat
-          addBotMessage(`Great! I've recorded your booking for ${booking.dog}'s ${booking.service.toLowerCase()} service. Rachael will contact you soon! 🐕`);
-
-        } catch (error) {
-          console.error('Booking failed:', error);
-          alert('Sorry, there was an error processing your booking. Please try again.');
-        } finally {
-          // Reset button
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-        }
-      }, 1500); // Simulate network delay
-    }
-
-    // Storage functions with error handling
-    function saveBooking(booking) {
-      try {
-        bookingHistory.push(booking);
-        localStorage.setItem("bookingHistory", JSON.stringify(bookingHistory));
-      } catch (error) {
-        console.error('Failed to save booking to localStorage:', error);
-        throw error;
-      }
-    }
-
-    function loadBookingHistory() {
-      try {
-        const saved = localStorage.getItem("bookingHistory");
-        if (saved) {
-          bookingHistory = JSON.parse(saved);
-        }
-      } catch (error) {
-        console.error('Failed to load booking history from localStorage:', error);
-        bookingHistory = [];
-      }
-    }
-
-    // Success animation
-    function showSuccessAnimation() {
-      const successEl = document.getElementById('successAnimation');
-      successEl.style.display = 'flex';
-      setTimeout(() => {
-        successEl.style.display = 'none';
       }, 3000);
     }
+  });
+}
 
-    // Enhanced chat functions
-    function toggleChat() {
-      const chatBot = document.getElementById("chatBot");
-      const isActive = chatBot.classList.contains('active');
-
-      if (isActive) {
-        chatBot.classList.remove('active');
-        chatBot.setAttribute('aria-hidden', 'true');
-        document.removeEventListener('keydown', handleEscapeKey);
+// Header scroll effect
+function setupScrollHandler() {
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if (header) {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
       } else {
-        chatBot.classList.add('active');
-        chatBot.setAttribute('aria-hidden', 'false');
-        document.addEventListener('keydown', handleEscapeKey);
+        header.classList.remove('scrolled');
+      }
+    }
+  });
+}
 
-        setTimeout(() => {
-          document.getElementById('chatInput').focus();
-        }, 300);
+// Mobile menu toggle
+function toggleMobileMenu() {
+  const nav = document.getElementById('nav');
+  const mobileMenu = document.querySelector('.mobile-menu');
 
+  if (!nav || !mobileMenu) return;
+
+  nav.classList.toggle('active');
+  if (nav.classList.contains('active')) {
+    mobileMenu.setAttribute('aria-expanded', 'true');
+  } else {
+    mobileMenu.setAttribute('aria-expanded', 'false');
+  }
+}
+
+// Handle Escape key for modals/chatbots
+function handleEscapeKey(event) {
+  if (event.key === 'Escape') {
+    const modalOverlay = document.getElementById('modalOverlay');
+    const chatBot = document.getElementById('chatBot');
+
+    if (modalOverlay && modalOverlay.classList.contains('active')) {
+      toggleModal();
+    } else if (chatBot && chatBot.classList.contains('active')) {
+      toggleChat();
+    }
+  }
+}
+
+// Modal functions with accessibility
+function toggleModal() {
+  const overlay = document.getElementById('modalOverlay');
+  if (!overlay) return;
+
+  const isActive = overlay.classList.contains('active');
+
+  if (isActive) {
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scroll
+    document.removeEventListener('keydown', handleEscapeKey);
+  } else {
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent scroll
+    document.addEventListener('keydown', handleEscapeKey);
+
+    // Focus first input
+    setTimeout(() => {
+      const ownerName = document.getElementById('ownerName');
+      if (ownerName) ownerName.focus();
+    }, 300);
+  }
+}
+
+// Individual field validation
+function validateField(fieldId, errorId, message) {
+  const element = document.getElementById(fieldId);
+  const errorElement = document.getElementById(errorId);
+
+  if (!element || !errorElement) return false;
+
+  let isValid = true;
+
+  if (!element.value.trim()) {
+    errorElement.textContent = message;
+    errorElement.style.display = 'block';
+    element.style.borderColor = 'var(--error-color, #ff0000)';
+    isValid = false;
+  } else {
+    errorElement.style.display = 'none';
+    element.style.borderColor = 'var(--border-color-medium, #ccc)';
+  }
+
+  // Specific date validation
+  if (fieldId === 'dateTime' && element.value.trim()) {
+    const selectedDate = new Date(element.value);
+    const now = new Date();
+    if (selectedDate <= now) {
+      errorElement.textContent = 'Please select a future date and time.';
+      errorElement.style.display = 'block';
+      element.style.borderColor = 'var(--error-color, #ff0000)';
+      isValid = false;
+    } else {
+      errorElement.style.display = 'none';
+      element.style.borderColor = 'var(--border-color-medium, #ccc)';
+    }
+  }
+  return isValid;
+}
+
+// Form validation
+function validateForm() {
+  let isValid = true;
+  isValid = validateField('ownerName', 'ownerNameError', 'Please enter your name') && isValid;
+  isValid = validateField('dogName', 'dogNameError', 'Please enter your dog\'s name') && isValid;
+  isValid = validateField('serviceType', 'serviceTypeError', 'Please select a service') && isValid;
+  isValid = validateField('dateTime', 'dateTimeError', 'Please select a date and time') && isValid;
+
+  return isValid;
+}
+
+// Enhanced booking submission
+function submitBooking(event) {
+  event.preventDefault();
+
+  if (!validateForm()) {
+    return;
+  }
+
+  const submitBtn = document.getElementById('submitBtn');
+  if (!submitBtn) return;
+
+  const originalText = submitBtn.innerHTML;
+
+  // Show loading state
+  submitBtn.innerHTML = '<div class="loading"></div> Processing...';
+  submitBtn.disabled = true;
+
+  const booking = {
+    id: Date.now(),
+    owner: document.getElementById("ownerName")?.value.trim() || '',
+    dog: document.getElementById("dogName")?.value.trim() || '',
+    service: document.getElementById("serviceType")?.value || '',
+    dateTime: document.getElementById("dateTime")?.value || '',
+    notes: document.getElementById("notes")?.value.trim() || '',
+    timestamp: new Date().toISOString()
+  };
+
+  // Simulate API call
+  setTimeout(() => {
+    try {
+      saveBooking(booking);
+      showSuccessAnimation();
+
+      // Reset form
+      const bookingForm = document.getElementById('bookingForm');
+      if (bookingForm) bookingForm.reset();
+
+      // Hide error messages and reset border colors
+      ['ownerName', 'dogName', 'serviceType', 'dateTime'].forEach(id => {
+        const element = document.getElementById(id);
+        const errorElement = document.getElementById(id + 'Error');
+        if (element) element.style.borderColor = 'var(--border-color-medium, #ccc)';
+        if (errorElement) errorElement.style.display = 'none';
+      });
+
+      toggleModal();
+
+      // Add confirmation to chat
+      addBotMessage(`Great! I've recorded your booking for ${booking.dog}'s ${booking.service.toLowerCase()} service. Rachael will contact you soon! 🐕`);
+
+    } catch (error) {
+      console.error('Booking failed:', error);
+      alert('Sorry, there was an error processing your booking. Please try again.');
+    } finally {
+      // Reset button
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
+  }, 1500);
+}
+
+// Storage functions with error handling
+function saveBooking(booking) {
+  try {
+    bookingHistory.push(booking);
+    localStorage.setItem("bookingHistory", JSON.stringify(bookingHistory));
+  } catch (error) {
+    console.error('Failed to save booking to localStorage:', error);
+    throw error;
+  }
+}
+
+function loadBookingHistory() {
+  try {
+    const saved = localStorage.getItem("bookingHistory");
+    if (saved) {
+      bookingHistory = JSON.parse(saved);
+    }
+  } catch (error) {
+    console.error('Failed to load booking history from localStorage:', error);
+    bookingHistory = [];
+  }
+}
+
+// Success animation
+function showSuccessAnimation() {
+  const successEl = document.getElementById('successAnimation');
+  if (successEl) {
+    successEl.style.display = 'flex';
+    setTimeout(() => {
+      successEl.style.display = 'none';
+    }, 3000);
+  }
+}
+
+// Enhanced chat functions
+function toggleChat() {
+  const chatBot = document.getElementById("chatBot");
+  if (!chatBot) return;
+
+  const isActive = chatBot.classList.contains('active');
+
+  if (isActive) {
+    chatBot.classList.remove('active');
+    chatBot.setAttribute('aria-hidden', 'true');
+    document.removeEventListener('keydown', handleEscapeKey);
+  } else {
+    chatBot.classList.add('active');
+    chatBot.setAttribute('aria-hidden', 'false');
+    document.addEventListener('keydown', handleEscapeKey);
+
+    setTimeout(() => {
+      const chatInput = document.getElementById('chatInput');
+      if (chatInput) chatInput.focus();
+    }, 300);
+
+    scrollChatToBottom();
+  }
+}
+
+function sendChat() {
+  const input = document.getElementById("chatInput");
+  if (!input) return;
+
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  addUserMessage(msg);
+  input.value = "";
+
+  showTypingIndicator();
+
+  setTimeout(() => {
+    hideTypingIndicator();
+    const response = generateBotResponse(msg);
+    addBotMessage(response);
+  }, 1000 + Math.random() * 2000);
+}
+
+function addUserMessage(message) {
+  const chatArea = document.getElementById("chatMessages");
+  if (!chatArea) return;
+
+  const messageEl = document.createElement("div");
+  messageEl.className = "message user";
+  messageEl.innerHTML = `<strong>You:</strong> ${escapeHtml(message)}`;
+  chatArea.appendChild(messageEl);
+
+  saveChatMessage({ from: "You", message, timestamp: new Date().toISOString() });
+  scrollChatToBottom();
+}
+
+function addBotMessage(message) {
+  const chatArea = document.getElementById("chatMessages");
+  if (!chatArea) return;
+
+  const messageEl = document.createElement("div");
+  messageEl.className = "message bot";
+  messageEl.innerHTML = `<strong>RuffBot:</strong> ${escapeHtml(message)}`;
+  chatArea.appendChild(messageEl);
+
+  saveChatMessage({ from: "RuffBot", message, timestamp: new Date().toISOString() });
+  scrollChatToBottom();
+}
+
+function generateBotResponse(userMessage) {
+  const lowerMsg = userMessage.toLowerCase();
+
+  if (lowerMsg.includes('book') || lowerMsg.includes('appointment') || lowerMsg.includes('schedule')) {
+    return "I'd be happy to help you book a service! 🐕 Click the 'Book a Service' button above to get started.";
+  } else if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
+    return "Our prices vary by service and duration. Rachael will provide a custom quote based on your needs! 💰";
+  } else if (lowerMsg.includes('walk') || lowerMsg.includes('walking')) {
+    return "We offer daily dog walking services with flexible scheduling. Your pup will get exercise and attention! 🚶‍♀️";
+  } else if (lowerMsg.includes('sit') || lowerMsg.includes('sitting') || lowerMsg.includes('care')) {
+    return "Our dog sitting service provides loving care in your home or ours. Your dog will be safe and happy! 🏠";
+  } else if (lowerMsg.includes('groom') || lowerMsg.includes('grooming') || lowerMsg.includes('bath')) {
+    return "Professional grooming services include baths, nail trims, and styling. Your dog will look and feel great! ✨";
+  } else if (lowerMsg.includes('emergency') || lowerMsg.includes('urgent') || lowerMsg.includes('asap')) {
+    return "For urgent requests, please call Rachael directly. We'll do our best to accommodate emergency situations! 🚨";
+  } else if (lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('hey')) {
+    return "Hello! Welcome to Rachael's Dogs! How can I help you and your furry friend today? 👋";
+  } else if (lowerMsg.includes('thank') || lowerMsg.includes('thanks')) {
+    return "You're very welcome! I'm here to help anytime. Woof woof! 🐾";
+  } else if (lowerMsg.includes('contact')) {
+    return "You can reach us by phone at +1 (234) 567-890 or email at info@rachaeldogs.com. We're also located at 123 Canine Street, Dogville, USA.";
+  } else {
+    return botResponses[Math.floor(Math.random() * botResponses.length)];
+  }
+}
+
+function showTypingIndicator() {
+  const indicator = document.getElementById('typingIndicator');
+  if (indicator) {
+    indicator.style.display = 'flex';
+    scrollChatToBottom();
+  }
+}
+
+function hideTypingIndicator() {
+  const indicator = document.getElementById('typingIndicator');
+  if (indicator) {
+    indicator.style.display = 'none';
+  }
+}
+
+function scrollChatToBottom() {
+  const chatArea = document.getElementById("chatMessages");
+  if (chatArea) {
+    chatArea.scrollTop = chatArea.scrollHeight;
+  }
+}
+
+// Chat history functions with error handling
+function saveChatMessage(message) {
+  try {
+    chatHistory.push(message);
+    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+  } catch (error) {
+    console.error('Failed to save chat message to localStorage:', error);
+  }
+}
+
+function loadChatHistory() {
+  try {
+    const saved = localStorage.getItem("chatHistory");
+    if (saved) {
+      chatHistory = JSON.parse(saved);
+      const chatArea = document.getElementById("chatMessages");
+      if (chatArea) {
+        chatHistory.forEach(msg => {
+          if (msg.from === "You") {
+            addUserMessage(msg.message);
+          } else {
+            addBotMessage(msg.message);
+          }
+        });
         scrollChatToBottom();
       }
     }
+  } catch (error) {
+    console.error('Failed to load chat history from localStorage:', error);
+    chatHistory = [];
+  }
+}
 
-    function sendChat() {
-      const input = document.getElementById("chatInput");
-      const msg = input.value.trim();
+// Helper to escape HTML for security (preventing XSS in messages)
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
 
-      if (!msg) return;
+function bookService(serviceType) {
+  const serviceNames = {
+    'walking': 'Dog Walking',
+    'sitting': 'Dog Sitting',
+    'grooming': 'Grooming'
+  };
 
-      addUserMessage(msg);
+  showBookingSuccess(`${serviceNames[serviceType]} booking started! Scrolling to contact form...`);
 
-      input.value = "";
+  setTimeout(() => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
 
-      showTypingIndicator();
-
-      setTimeout(() => {
-        hideTypingIndicator();
-        const response = generateBotResponse(msg);
-        addBotMessage(response);
-      }, 1000 + Math.random() * 2000);
-    }
-
-    function addUserMessage(message) {
-      const chatArea = document.getElementById("chatMessages");
-      const messageEl = document.createElement("div");
-      messageEl.className = "message user";
-      messageEl.innerHTML = `<strong>You:</strong> ${escapeHtml(message)}`;
-      chatArea.appendChild(messageEl);
-
-      saveChatMessage({ from: "You", message, timestamp: new Date().toISOString() });
-
-      scrollChatToBottom();
-    }
-
-    function addBotMessage(message) {
-      const chatArea = document.getElementById("chatMessages");
-      const messageEl = document.createElement("div");
-      messageEl.className = "message bot";
-      messageEl.innerHTML = `<strong>RuffBot:</strong> ${escapeHtml(message)}`;
-      chatArea.appendChild(messageEl);
-
-      saveChatMessage({ from: "RuffBot", message, timestamp: new Date().toISOString() });
-
-      scrollChatToBottom();
-    }
-
-    function generateBotResponse(userMessage) {
-      const lowerMsg = userMessage.toLowerCase();
-
-      if (lowerMsg.includes('book') || lowerMsg.includes('appointment') || lowerMsg.includes('schedule')) {
-        return "I'd be happy to help you book a service! 🐕 Click the 'Book a Service' button above to get started.";
-      } else if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
-        return "Our prices vary by service and duration. Rachael will provide a custom quote based on your needs! 💰";
-      } else if (lowerMsg.includes('walk') || lowerMsg.includes('walking')) {
-        return "We offer daily dog walking services with flexible scheduling. Your pup will get exercise and attention! 🚶‍♀️";
-      } else if (lowerMsg.includes('sit') || lowerMsg.includes('sitting') || lowerMsg.includes('care')) {
-        return "Our dog sitting service provides loving care in your home or ours. Your dog will be safe and happy! 🏠";
-      } else if (lowerMsg.includes('groom') || lowerMsg.includes('grooming') || lowerMsg.includes('bath')) {
-        return "Professional grooming services include baths, nail trims, and styling. Your dog will look and feel great! ✨";
-      } else if (lowerMsg.includes('emergency') || lowerMsg.includes('urgent') || lowerMsg.includes('asap')) {
-        return "For urgent requests, please call Rachael directly. We'll do our best to accommodate emergency situations! 🚨";
-      } else if (lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('hey')) {
-        return "Hello! Welcome to Rachael's Dogs! How can I help you and your furry friend today? 👋";
-      } else if (lowerMsg.includes('thank') || lowerMsg.includes('thanks')) {
-        return "You're very welcome! I'm here to help anytime. Woof woof! 🐾";
-      } else if (lowerMsg.includes('contact')) {
-        return "You can reach us by phone at +1 (234) 567-890 or email at info@rachaeldogs.com. We're also located at 123 Canine Street, Dogville, USA.";
-      } else {
-        return botResponses[Math.floor(Math.random() * botResponses.length)];
+      const serviceSelect = document.querySelector('#service-select, select[name="service"]');
+      if (serviceSelect) {
+        serviceSelect.value = serviceType;
+        serviceSelect.focus();
       }
-    }
 
-    function showTypingIndicator() {
-      const indicator = document.getElementById('typingIndicator');
-      indicator.style.display = 'flex';
-      scrollChatToBottom();
+      contactSection.style.animation = 'pulse 2s ease-in-out';
+    } else {
+      const emailSubject = `${serviceNames[serviceType]} Booking Request`;
+      const emailBody = `Hi! I'm interested in booking your ${serviceNames[serviceType]} service. Please contact me with available times and any additional details needed.`;
+      window.location.href = `mailto:info@yourpetservice.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
     }
+  }, 500);
+}
 
-    function hideTypingIndicator() {
-      const indicator = document.getElementById('typingIndicator');
-      indicator.style.display = 'none';
+function showBookingSuccess(message) {
+  let successMsg = document.getElementById('bookingSuccess');
+  if (!successMsg) {
+    successMsg = document.createElement('div');
+    successMsg.id = 'bookingSuccess';
+    successMsg.className = 'booking-success';
+    document.body.appendChild(successMsg);
+  }
+
+  successMsg.innerHTML = `<i class="fas fa-paw"></i> ${message}`;
+  successMsg.style.display = 'block';
+
+  setTimeout(() => {
+    successMsg.style.display = 'none';
+  }, 4000);
+}
+
+// Handlers for pricing buttons
+function handleBookNow(serviceType = 'walking') {
+  toggleModal();
+  setTimeout(() => {
+    const serviceSelect = document.getElementById('serviceType');
+    if (serviceSelect) {
+      serviceSelect.value = serviceType;
     }
+  }, 300);
+  addBotMessage("Great! I see you want to book a service. Please fill out the booking form that just opened! 🐕");
+}
 
-    function scrollChatToBottom() {
-      const chatArea = document.getElementById("chatMessages");
-      chatArea.scrollTop = chatArea.scrollHeight;
+function handleReserveNow(serviceType = 'sitting') {
+  const serviceNames = {
+    'walking': 'Dog Walking',
+    'sitting': 'Dog Sitting',
+    'grooming': 'Grooming'
+  };
+  showBookingSuccess(`Reservation started for ${serviceNames[serviceType]}! Opening booking form...`);
+  setTimeout(() => {
+    toggleModal();
+    const serviceSelect = document.getElementById('serviceType');
+    if (serviceSelect) {
+      serviceSelect.value = serviceType;
     }
+  }, 1000);
+  addBotMessage(`Perfect! I'm helping you reserve ${serviceNames[serviceType]}. The booking form is now open! 📅`);
+}
 
-    // Chat history functions with error handling
-    function saveChatMessage(message) {
-      try {
-        chatHistory.push(message);
-        localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-      } catch (error) {
-        console.error('Failed to save chat message to localStorage:', error);
+function handleSchedule(serviceType = 'grooming') {
+  showBookingSuccess("Opening scheduler... Let's find the perfect time! ⏰");
+  setTimeout(() => {
+    toggleModal();
+    setTimeout(() => {
+      const serviceSelect = document.getElementById('serviceType');
+      if (serviceSelect) {
+        serviceSelect.value = serviceType;
       }
-    }
-
-    function loadChatHistory() {
-      try {
-        const saved = localStorage.getItem("chatHistory");
-        if (saved) {
-          chatHistory = JSON.parse(saved);
-          chatHistory.forEach(msg => {
-            if (msg.from === "You") {
-              addUserMessage(msg.message);
-            } else {
-              addBotMessage(msg.message);
-            }
-          });
-          scrollChatToBottom();
-        }
-      } catch (error) {
-        console.error('Failed to load chat history from localStorage:', error);
-        chatHistory = [];
+      const dateTimeInput = document.getElementById('dateTime');
+      if (dateTimeInput) {
+        dateTimeInput.focus();
       }
-    }
+    }, 500);
+  }, 800);
+  addBotMessage("Let's schedule your appointment! I've opened the booking form with the date picker ready. 🗓️");
+}
 
-    // Helper to escape HTML for security (preventing XSS in messages)
-    function escapeHtml(text) {
-      const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-      };
-      return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-    }
-  </script>
+// Remove the now-obsolete handlePricingButtonClick() and setupPricingButtons() functions.
+// They are no longer needed since the logic is now consolidated. 
+</script>
 </body>
 </html>
