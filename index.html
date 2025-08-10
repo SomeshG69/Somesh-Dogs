@@ -1427,7 +1427,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeApp() {
-  loadChatHistory();
+  // We're intentionally NOT loading the chat history here
+  // to prevent old messages from showing on page load.
   loadBookingHistory();
   setupVideoHandlers();
   setupScrollHandler();
@@ -1778,7 +1779,8 @@ function showSuccessAnimation() {
 // Enhanced chat functions
 function toggleChat() {
   const chatBot = document.getElementById("chatBot");
-  if (!chatBot) return;
+  const chatMessages = document.getElementById("chatMessages");
+  if (!chatBot || !chatMessages) return;
 
   const isActive = chatBot.classList.contains('active');
 
@@ -1790,6 +1792,10 @@ function toggleChat() {
     chatBot.classList.add('active');
     chatBot.setAttribute('aria-hidden', 'false');
     document.addEventListener('keydown', handleEscapeKey);
+
+    // Clear and reset the chat window
+    chatMessages.innerHTML = ''; // This line clears the chat messages.
+    addBotMessage("Hi! How can I help you today? 🐶"); // This line adds the single welcome message.
 
     setTimeout(() => {
       const chatInput = document.getElementById('chatInput');
@@ -2033,9 +2039,7 @@ function handleSchedule(serviceType = 'grooming') {
   }, 800);
   addBotMessage("Let's schedule your appointment! I've opened the booking form with the date picker ready. 🗓️");
 }
-
-// Remove the now-obsolete handlePricingButtonClick() and setupPricingButtons() functions.
-// They are no longer needed since the logic is now consolidated. 
 </script>
 </body>
 </html>
+
